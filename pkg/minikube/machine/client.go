@@ -24,6 +24,7 @@ import (
 	"github.com/docker/machine/drivers/vmwarefusion"
 	"github.com/docker/machine/libmachine/drivers/plugin"
 	"github.com/docker/machine/libmachine/drivers/plugin/localbinary"
+	"github.com/Parallels/docker-machine-parallels"
 	"github.com/golang/glog"
 )
 
@@ -38,6 +39,8 @@ func StartDriver() {
 			plugin.RegisterDriver(vmwarefusion.NewDriver("", ""))
 		case "hyperv":
 			plugin.RegisterDriver(hyperv.NewDriver("", ""))
+		case "parallels":
+			plugin.RegisterDriver(parallels.NewDriver("", ""))
 		default:
 			glog.Exitf("Unsupported driver: %s\n", driverName)
 		}

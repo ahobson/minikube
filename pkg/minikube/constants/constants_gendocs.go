@@ -24,4 +24,5 @@ var SupportedVMDrivers = [...]string{
 	"kvm",
 	"xhyve",
 	"hyperv",
+	"parallels",
 }

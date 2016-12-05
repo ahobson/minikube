@@ -403,6 +403,8 @@ func createHost(api libmachine.API, config MachineConfig) (*host.Host, error) {
 		driver = createVirtualboxHost(config)
 	case "vmwarefusion":
 		driver = createVMwareFusionHost(config)
+	case "parallels":
+		driver = createParallelsHost(config)
 	case "kvm":
 		driver = createKVMHost(config)
 	case "xhyve":

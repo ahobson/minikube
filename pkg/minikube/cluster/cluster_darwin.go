@@ -19,6 +19,7 @@ package cluster
 import (
 	"github.com/docker/machine/drivers/vmwarefusion"
 	"github.com/docker/machine/libmachine/drivers"
+	"github.com/Parallels/docker-machine-parallels"
 	"k8s.io/minikube/pkg/minikube/constants"
 )
 
@@ -32,6 +33,15 @@ func createVMwareFusionHost(config MachineConfig) drivers.Driver {
 	// TODO(philips): push these defaults upstream to fixup this driver
 	d.SSHPort = 22
 	d.ISO = d.ResolveStorePath("boot2docker.iso")
+	return d
+}
+
+func createParallelsHost(config MachineConfig) drivers.Driver {
+	d := parallels.NewDriver(constants.MachineName, constants.Minipath).(*parallels.Driver)
+	d.Boot2DockerURL = config.GetISOFileURI()
+	d.Memory = config.Memory
+	d.CPU = config.CPUs
+	d.DiskSize = config.DiskSize
 	return d
 }
 

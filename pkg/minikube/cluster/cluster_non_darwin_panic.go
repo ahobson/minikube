@@ -24,6 +24,10 @@ func createVMwareFusionHost(config MachineConfig) drivers.Driver {
 	panic("vmwarefusion not supported")
 }
 
+func createParallelsHost(config MachineConfig) drivers.Driver {
+	panic("parallels not supported")
+}
+
 func createXhyveHost(config MachineConfig) drivers.Driver {
 	panic("xhyve not supported")
 }

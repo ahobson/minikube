@@ -32,7 +32,7 @@ minikube start
       --memory int                      Amount of RAM allocated to the minikube VM (default 2048)
       --network-plugin string           The name of the network plugin
       --registry-mirror stringSlice     Registry mirrors to pass to the Docker daemon
-      --vm-driver string                VM driver is one of: [virtualbox vmwarefusion kvm xhyve hyperv] (default "virtualbox")
+      --vm-driver string                VM driver is one of: [virtualbox vmwarefusion parallels kvm xhyve hyperv] (default "virtualbox")
 ```
 
 ### Options inherited from parent commands

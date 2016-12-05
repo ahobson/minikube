@@ -22,4 +22,5 @@ var SupportedVMDrivers = [...]string{
 	"virtualbox",
 	"xhyve",
 	"vmwarefusion",
+	"parallels",
 }
